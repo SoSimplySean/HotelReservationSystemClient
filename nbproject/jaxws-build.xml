@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.metro.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-PartnerWebService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/PartnerWebService"/>
+        <property name="wsdl-PartnerWebService" location="xml-resources/web-service-references/PartnerWebService/wsdl/localhost_8080/PartnerWebService/PartnerWebService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PartnerWebService" destdir="${build.generated.dir}/jax-wsCache/PartnerWebService" wsdl="${wsdl-PartnerWebService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/PartnerWebService/PartnerWebService?wsdl" xnocompile="true" xendorsed="true" package="ws.client.partner">
+            <depends file="${wsdl-PartnerWebService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/PartnerWebService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/PartnerWebService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-PartnerWebService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/PartnerWebService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws/client/partner"/>
+    </target>
+    <target name="wsimport-client-CarWebService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CarWebService"/>
+        <property name="wsdl-CarWebService" location="xml-resources/web-service-references/CarWebService/wsdl/localhost_8080/CarWebService/CarWebService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CarWebService" destdir="${build.generated.dir}/jax-wsCache/CarWebService" wsdl="${wsdl-CarWebService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/CarWebService/CarWebService?wsdl" xnocompile="true" xendorsed="true" package="ws.client.car">
+            <depends file="${wsdl-CarWebService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CarWebService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CarWebService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CarWebService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/CarWebService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws/client/car"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-PartnerWebService, wsimport-client-CarWebService"/>
+</project>
