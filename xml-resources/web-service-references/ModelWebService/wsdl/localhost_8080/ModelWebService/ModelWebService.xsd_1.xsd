@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://ws.session.ejb/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.session.ejb/">
+
+<xs:element name="ModelNotFoundException" type="tns:ModelNotFoundException"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="retrieveAllModelsSorted" type="tns:retrieveAllModelsSorted"/>
+
+<xs:element name="retrieveAllModelsSortedResponse" type="tns:retrieveAllModelsSortedResponse"/>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="retrieveAllModelsSorted">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="retrieveAllModelsSortedResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:model" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="model">
+<xs:sequence>
+<xs:element name="cars" type="tns:car" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="category" type="tns:category" minOccurs="0"/>
+<xs:element name="disabled" type="xs:boolean"/>
+<xs:element name="make" type="xs:string" minOccurs="0"/>
+<xs:element name="model" type="xs:string" minOccurs="0"/>
+<xs:element name="modelId" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="car">
+<xs:sequence>
+<xs:element name="carId" type="xs:long" minOccurs="0"/>
+<xs:element name="colour" type="xs:string" minOccurs="0"/>
+<xs:element name="disabled" type="xs:boolean"/>
+<xs:element name="licensePlateNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="rentalFee" type="xs:decimal" minOccurs="0"/>
+<xs:element name="status" type="tns:carStatusEnum" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="category">
+<xs:sequence>
+<xs:element name="available" type="xs:boolean"/>
+<xs:element name="cars" type="tns:car" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="category" type="tns:categoryEnum" minOccurs="0"/>
+<xs:element name="categoryId" type="xs:long" minOccurs="0"/>
+<xs:element name="rentalFee" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ModelNotFoundException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="carStatusEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="AVAILABLE"/>
+<xs:enumeration value="ON_RENTAL"/>
+<xs:enumeration value="REPAIR"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="categoryEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="FAMILY_SEDAN"/>
+<xs:enumeration value="LUXURY_SEDAN"/>
+<xs:enumeration value="STANDARD_SEDAN"/>
+<xs:enumeration value="SUV_MINIVAN"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

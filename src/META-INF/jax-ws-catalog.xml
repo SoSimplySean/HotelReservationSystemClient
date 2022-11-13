@@ -4,4 +4,12 @@
     <system systemId="http://localhost:8080/PartnerWebService/PartnerWebService?xsd=1" uri="wsdl/localhost_8080/PartnerWebService/PartnerWebService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/CarWebService/CarWebService?wsdl" uri="wsdl/localhost_8080/CarWebService/CarWebService.wsdl"/>
     <system systemId="http://localhost:8080/CarWebService/CarWebService?xsd=1" uri="wsdl/localhost_8080/CarWebService/CarWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ReservationWebService/ReservationWebService?wsdl" uri="wsdl/localhost_8080/ReservationWebService/ReservationWebService.wsdl"/>
+    <system systemId="http://localhost:8080/ReservationWebService/ReservationWebService?xsd=1" uri="wsdl/localhost_8080/ReservationWebService/ReservationWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/CreditCardWebService/CreditCardWebService?wsdl" uri="wsdl/localhost_8080/CreditCardWebService/CreditCardWebService.wsdl"/>
+    <system systemId="http://localhost:8080/CreditCardWebService/CreditCardWebService?xsd=1" uri="wsdl/localhost_8080/CreditCardWebService/CreditCardWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ModelWebService/ModelWebService?wsdl" uri="wsdl/localhost_8080/ModelWebService/ModelWebService.wsdl"/>
+    <system systemId="http://localhost:8080/ModelWebService/ModelWebService?xsd=1" uri="wsdl/localhost_8080/ModelWebService/ModelWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/CustomerWebService/CustomerWebService?wsdl" uri="wsdl/localhost_8080/CustomerWebService/CustomerWebService.wsdl"/>
+    <system systemId="http://localhost:8080/CustomerWebService/CustomerWebService?xsd=1" uri="wsdl/localhost_8080/CustomerWebService/CustomerWebService.xsd_1.xsd"/>
 </catalog>
